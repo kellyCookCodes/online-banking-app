@@ -62,7 +62,7 @@
             <div class="col-8">
                 <!-- == TAB CONTENT == -->
                 <div class="tab-content" id="nav-tabContent">
-                    <!-- == Account Summary TAB == -->
+                    <!-- == ACCOUNT SUMMARY TAB == -->
                     <div class="tab-pane fade show active" id="account-summary" role="tabpanel"
                         aria-labelledby="account-summary-list">
                         <div class="card mb-3" id="account-summary-card">
@@ -72,6 +72,7 @@
                                         alt="International Piggy Bank logo of a gold coin over a piggy bank slot with text that reads International Piggy Bank"
                                         id="account-summary-img">
                                 </div>
+                                <!-- == ACCOUNT SUMMARY == -->
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <p class="card-text">
@@ -82,13 +83,14 @@
                                         <p class="card-text mb-0"><small class="text-body-secondary">Available
                                                 Balance:</small>
                                         </p>
-                                        <p class="card-text fs-3">$22,562.82</p>
+                                        <p class="card-text fs-3">$22,561.87</p>
                                         <p class="card-text"><small class="text-body-secondary">Last transation 2 days
                                                 ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- == ACCORDION ACCOUNT STATEMENT HEADER == -->
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header ">
@@ -99,38 +101,38 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show p-2"
                                     data-bs-parent="#accordionExample">
-                                    <div class="list-group">
+                                    <div class="list-group" id="transation-list">
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">PayPal Return</h5>
-                                                <div class="fs-5 text-success">$39.99</div>
+                                                <h5 class="mb-1">ACH Transaction: Cliff</h5>
+                                                <div class="fs-5 text-danger">-$17.20</div>
                                             </div>
-                                            <p class="mb-1">Credit</p>
+                                            <p class="mb-1">Withdraw (Debit)</p> // Transfer Out
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/12/2025 01:48:08</small>
-                                                <small>Balance: $22,522.83</small>
+                                                <small>Balance: $22,561.87</small>
                                             </div>
                                         </a>
                                         <a href="#" class="list-group-item list-group-item-action">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">ACH Autopay</h5>
-                                                <div class="fs-5 text-success">$1,000.00</div>
+                                                <h5 class="mb-1">Wire Transaction: Sharon</h5>
+                                                <div class="fs-5 text-danger">-$1,000.00</div>
                                             </div>
-                                            <p class="mb-1">Credit</p>
+                                            <p class="mb-1">Withdraw (Debit)</p> // Transfer Out
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/11/2025 08:30:00</small>
-                                                <small>Balance: $21,522.83</small>
+                                                <small>Balance: $22,579.07</small>
                                             </div>
                                         </a>
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">Debit Card</h5>
-                                                <div class="fs-5 text-danger">$-17.95</div>
+                                                <h5 class="mb-1">Direct Deposit</h5>
+                                                <div class="fs-5 text-success">$20,000.95</div>
                                             </div>
-                                            <p class="mb-1">Debit</p>
+                                            <p class="mb-1">Deposit (Credit)</p> //Transfer In
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/10/2025 10:48:08</small>
-                                                <small>Balance: $21,540.78</small>
+                                                <small>Balance: $23,579.07</small>
                                             </div>
                                         </a>
                                     </div>
@@ -138,33 +140,24 @@
                             </div>
                         </div>
                     </div>
-                    <!-- == DEPOSIT TAB == -->
+                    <!-- == DEPOSIT TAB (CREDIT)== -->
                     <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-list">
                         <h2 class="display-4">Deposit</h2>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Beneficiary Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Account Number</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Beneficiary Account Number">
-                        </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Amount to Deposit</label>
                             <input type="number" class="form-control" id="exampleFormControlInput1"
                                 placeholder="Amount">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Memo:</label>
-                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-                        </div>
                         <button type="button" class="btn btn-dark">Send Money</button>
                     </div>
-                    <!-- == WITHDRAW TABwww == -->
+                    <!-- == WITHDRAW TAB (DEBIT)== -->
                     <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-list">
                         <h2 class="display-4">Withdraw</h2>
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option selected>Transaction Type</option>
+                            <option value="1">Wire</option>
+                            <option value="2">ACH</option>
+                        </select>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Beneficiary Name</label>
                             <input type="text" class="form-control" id="exampleFormControlInput1"
