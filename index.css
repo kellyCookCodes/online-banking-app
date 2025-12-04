@@ -1,0 +1,29 @@
+nav {
+    background-color: #cfe2ff;
+}
+
+#account-summary-card {
+    max-width: 540px;
+}
+
+#account-summary-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#see-account-num {
+    cursor: pointer;
+}
+
+#nav-piggy-img {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-danger-bg-subtle);   /* subtle red background */
+  --bs-btn-color: #212529;                   /* dark text for contrast */
+  --bs-btn-border-color: var(--bs-danger-bg-subtle);
+  --bs-btn-hover-bg: #f5c2c7;                /* slightly darker red for hover */
+  --bs-btn-hover-border-color: #f5c2c7;
+}

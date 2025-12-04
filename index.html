@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Bank</title>
+    <link rel="icon" type="image/png" href="assets\IPB-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/02687c1d10.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--== NAVBAR ==-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="light">
+        <div class="container-fluid">
+            <img src="assets\IPB-logo-transparent-no-text-cropped.png"
+                alt="INPB logo of a pink pig with a squigly tail and a globe icon on it's side; there is a gold coin hovering over the piggy bank coin slot on the top of it's back."
+                id="nav-piggy-img">
+            <a class="navbar-brand" href="#">International Piggy Bank</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Terms and conditions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products and services</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Online banking registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--== MAIN ==-->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-4"> <!-- == TAB LIST == -->
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-light active" id="account-summary-list"
+                        data-bs-toggle="list" href="#account-summary" role="tab" aria-controls="account-summary">Account
+                        Summary</a>
+                    <a class="list-group-item list-group-item-light" id="deposit-list" data-bs-toggle="list"
+                        href="#deposit" role="tab" aria-controls="deposit">Deposit</a>
+                    <a class="list-group-item list-group-item-light" id="withdraw-list" data-bs-toggle="list"
+                        href="#withdraw" role="tab" aria-controls="withdraw">Withdraw</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <!-- == TAB CONTENT == -->
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- == Account Summary TAB == -->
+                    <div class="tab-pane fade show active" id="account-summary" role="tabpanel"
+                        aria-labelledby="account-summary-list">
+                        <div class="card mb-3" id="account-summary-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="assets\IPB-logo.png" class="img-fluid rounded-start"
+                                        alt="International Piggy Bank logo of a gold coin over a piggy bank slot with text that reads International Piggy Bank"
+                                        id="account-summary-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            Account Number: <span id="account-no-text">*********789</span>
+                                            <i class="fa-solid fa-eye-slash" id="see-account-num"></i><br>
+                                            Member Name: Kelly Cook
+                                        </p>
+                                        <p class="card-text mb-0"><small class="text-body-secondary">Available
+                                                Balance:</small>
+                                        </p>
+                                        <p class="card-text fs-3">$22,562.82</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last transation 2 days
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header ">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Account Statement
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show p-2"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">PayPal Return</h5>
+                                                <div class="fs-5 text-success">$39.99</div>
+                                            </div>
+                                            <p class="mb-1">Credit</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>22/12/2025 01:48:08</small>
+                                                <small>Balance: $22,522.83</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">ACH Autopay</h5>
+                                                <div class="fs-5 text-success">$1,000.00</div>
+                                            </div>
+                                            <p class="mb-1">Credit</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>22/11/2025 08:30:00</small>
+                                                <small>Balance: $21,522.83</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Debit Card</h5>
+                                                <div class="fs-5 text-danger">$-17.95</div>
+                                            </div>
+                                            <p class="mb-1">Debit</p>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <small>22/10/2025 10:48:08</small>
+                                                <small>Balance: $21,540.78</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- == DEPOSIT TAB == -->
+                    <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-list">
+                        <h2 class="display-4">Deposit</h2>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Beneficiary Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Account Number</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Beneficiary Account Number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Amount to Deposit</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Amount">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Memo:</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+                        </div>
+                        <button type="button" class="btn btn-dark">Send Money</button>
+                    </div>
+                    <!-- == WITHDRAW TABwww == -->
+                    <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-list">
+                        <h2 class="display-4">Withdraw</h2>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Beneficiary Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Beneficiary Account Number</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Beneficiary Account Number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Amount to Withdraw</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Amount">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Memo:</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+                        </div>
+                        <button type="button" class="btn btn-dark">Take Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
