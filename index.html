@@ -101,13 +101,13 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show p-2"
                                     data-bs-parent="#accordionExample">
-                                    <div class="list-group" id="transation-list">
+                                    <div class="list-group" id="transaction-list">
                                         <a href="#" class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h5 class="mb-1">ACH Transaction: Cliff</h5>
                                                 <div class="fs-5 text-danger">-$17.20</div>
                                             </div>
-                                            <p class="mb-1">Withdraw (Debit)</p> // Transfer Out
+                                            <p class="mb-1">Withdraw (Debit)</p>
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/12/2025 01:48:08</small>
                                                 <small>Balance: $22,561.87</small>
@@ -118,7 +118,7 @@
                                                 <h5 class="mb-1">Wire Transaction: Sharon</h5>
                                                 <div class="fs-5 text-danger">-$1,000.00</div>
                                             </div>
-                                            <p class="mb-1">Withdraw (Debit)</p> // Transfer Out
+                                            <p class="mb-1">Withdraw (Debit)</p>
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/11/2025 08:30:00</small>
                                                 <small>Balance: $22,579.07</small>
@@ -129,7 +129,7 @@
                                                 <h5 class="mb-1">Direct Deposit</h5>
                                                 <div class="fs-5 text-success">$20,000.95</div>
                                             </div>
-                                            <p class="mb-1">Deposit (Credit)</p> //Transfer In
+                                            <p class="mb-1">Deposit (Credit)</p>
                                             <div class="d-flex w-100 justify-content-between">
                                                 <small>22/10/2025 10:48:08</small>
                                                 <small>Balance: $23,579.07</small>
@@ -148,7 +148,8 @@
                             <input type="number" class="form-control" id="exampleFormControlInput1"
                                 placeholder="Amount">
                         </div>
-                        <button type="button" class="btn btn-dark">Send Money</button>
+                        <button type="button" class="btn btn-dark" onclick="addTransferInToList()">Deposit
+                            Funds</button>
                     </div>
                     <!-- == WITHDRAW TAB (DEBIT)== -->
                     <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-list">
