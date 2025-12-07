@@ -20,6 +20,35 @@ nav {
     margin-right: 5px;
 }
 
+#login-logo {
+    height: 200px;
+}
+
+/* LOGIN FORM */
+#login-card {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* ADD ACCENT COLOR FOR BTN AND TEXT */
+.gold-accent-text {
+    color: #FFD700;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.gold-accent-bg {
+    background-color: #FFD700;
+}
+
+
+/* CUSTOMIZED LOGIN BTN */
+#login-btn {
+    color: #000;
+    font-weight: bold;
+    background-color: #FFD700;
+    box-shadow: 2px 2px 4px #000;
+}
+
 .btn-dark {
     --bs-btn-bg: var(--bs-danger-bg-subtle);
     /* subtle red background */
@@ -29,4 +58,147 @@ nav {
     --bs-btn-hover-bg: #f5c2c7;
     /* slightly darker red for hover */
     --bs-btn-hover-border-color: #f5c2c7;
+}
+
+/* BASE STYLE */
+.login-header h3 {
+    text-align: center;
+    font-size: 1rem;
+    /* default for very small screens */
+    line-height: 1.3;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1rem;
+    /* always add spacing */
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+
+/* SMALL DEVICES (PHONES, <576PX) */
+@media (max-width: 575.98px) {
+
+    /* LOGIN CARD SHOULD FILL MOST OF THE SCREEN */
+    #login-card {
+        width: 95%;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    /* LOGO SMALLER ON MOBILE */
+    #login-logo {
+        width: 60px;
+        height: auto;
+    }
+
+    /* NAVBAR BRAND TEXT SMALLER */
+    .navbar-brand {
+        font-size: 0.9rem;
+    }
+
+    /* ADJUST NAV INPB ICON */
+    #nav-piggy-img {
+        height: 40px;
+        margin-right: 3px;
+    }
+
+    /* FORM INPUTS FULL WIDTH */
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    /* BUTTONS LARGER TAP TARGETS */
+    #login-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .forgot-password {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+}
+
+/* BETWEEN 356px AND 575px, KEEP THE FONT UNDER THE LOGO READABLE */
+@media (min-width: 356px) and (max-width: 575.98px) {
+    #login-logo {
+        display: block;
+        margin: 0 auto 0.5rem;
+        max-height: 80px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    h3.gold-accent-text {
+        font-size: 1.25rem;
+        /* bump font size */
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
+/* MEDIUM DEVICES (TABLETS, 576PX-768PX) */
+@media (min-width: 576px) and (max-width: 768px) {
+    #login-card {
+        width: 80%;
+        margin: auto;
+    }
+
+    #login-logo {
+        width: 80px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .login-header h3 {
+        font-size: 1.3rem;
+    }
+
+}
+
+h3.gold-accent-text {
+    text-align: center;
+    /* keep text centered under logo */
+    font-size: 1rem;
+    /* shrink text slightly for narrow screens */
+}
+
+
+/* LARGE DEVICES (DESKTOPS, >768PX) */
+@media (min-width: 769px) {
+    #login-card {
+        width: 400px;
+    }
+
+    #login-logo {
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .login-header h3 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+}
+
+
+/* ACCOUNT SUMMARY CARD */
+@media (max-width: 575.98px) {
+    #account-summary-card {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
 }
