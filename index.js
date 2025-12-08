@@ -1,3 +1,5 @@
+console.log("index.js loaded")
+
 const accountNum = '572489446789'
 
 // SHOW/HIDE ACCOUNT NUM
@@ -140,3 +142,36 @@ function sendMoney() {
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`
 }
+
+// === LOGIN STATE TOGGLE LOGIC ===
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+function updateAuthLink() {
+  console.log("Auth link element:", document.getElementById("auth-link"));
+  console.log("Login state:", isLoggedIn);
+
+  const authLink = document.getElementById("auth-link");
+  if (!authLink) return;
+
+  if (isLoggedIn) {
+    authLink.textContent = "Logout";
+    authLink.href = "#"; // CLEARS THE FLAG
+    authLink.onclick = function (e) {
+      e.preventDefault();
+      isLoggedIn = false;
+      localStorage.removeItem("isLoggedIn");
+      updateAuthLink();
+      alert("You have been logged out.");
+      window.location.href = "login.html";
+    };
+  } else {
+    authLink.textContent = "Login";
+    authLink.href = "login.html";
+    authLink.onclick = null;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM ready");
+  updateAuthLink();
+});

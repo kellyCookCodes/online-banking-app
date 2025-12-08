@@ -1,8 +1,11 @@
 // 1. LOAD LOGIN STATE FROM LOCALSTORAGE
 let isLoggedIn = localStorage.getItem("isLoggedIn") === "true"
 
-// 2. FUNCTION TO UPDATE NAV LINK
+// 2. FUNCTION TO UPDATE NAV LOGIN LINK TOGGLE LOGOUT
 function updateAuthLink() {
+  console.log("Auth link element:", document.getElementById("auth-link"))
+  console.log("Login state:", isLoggedIn)
+
   const authLink = document.getElementById("auth-link")
   if (!authLink) return
 
@@ -10,11 +13,12 @@ function updateAuthLink() {
     authLink.textContent = "Logout"
     authLink.href = "#"
     authLink.onclick = function (e) {
-      e.preventDefault()
+      e.preventDefault() // event.preventDefault() overrides default actions and implement custom logic instead
       isLoggedIn = false
-      localStorage.setItem("isLoggedIn", "false")
+      localStorage.removeItem("isLoggedIn")
       updateAuthLink()
       alert("You have been logged out.")
+      window.location.href = "login.html" // REDIRECT
     }
   } else {
     authLink.textContent = "Login"
@@ -23,34 +27,32 @@ function updateAuthLink() {
   }
 }
 
-// 3. SPECIAL CASE: HIDE LOGIN LINK ON LOGIN PAGE IF NOT LOGGED IN
-const authLink = document.getElementById("auth-link")
-if (authLink && document.title.includes("Login")) {
-  if (isLoggedIn) {
-    // Show Logout if already logged in
-    authLink.textContent = "Logout"
-    authLink.href = "#"
-    authLink.onclick = function (e) {
-      e.preventDefault()
-      isLoggedIn = false
-      localStorage.setItem("isLoggedIn", "false")
-      updateAuthLink()
-      alert("You have been logged out.")
-    }
-  } else {
-    // Hide completely if not logged in
-    authLink.style.display = "none"
-  }
-}
+// 3. SPECIAL CASE: On login.html, flip to Logout if already logged in
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM ready")
 
-// 4. RUN ON PAGE LOAD
-updateAuthLink()
+  const authLink = document.getElementById("auth-link")
+  if (authLink && window.location.pathname.includes("login.html")) {
+    if (isLoggedIn) {
+      // Show Logout instead of hiding
+      updateAuthLink()
+    } else {
+      // Hide completely if not logged in
+      authLink.style.display = "none"
+    }
+  }
+
+  // 4. RUN ON PAGE LOAD
+  updateAuthLink()
+})
+
 
 // 5. LOGIN FORM HANDLER (ONLY ON LOGIN.HTML)
 const loginForm = document.getElementById("login-form")
 if (loginForm) {
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault()
+    // event.preventDefault() overrides default actions and implement custom logic instead
 
     const email = document.getElementById("email").value.trim()
     const password = document.getElementById("password").value.trim()
@@ -64,11 +66,11 @@ if (loginForm) {
       return
     }
 
-    // Simulate successful login
+    // SIMULATE SUCCESSFUL LOGIN
     isLoggedIn = true
     localStorage.setItem("isLoggedIn", "true")
-    updateAuthLink()
 
+    // REDIRECT TO INDEX.HTML
     window.location.href = "index.html"
   })
 }
